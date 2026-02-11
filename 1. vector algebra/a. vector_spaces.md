@@ -91,3 +91,55 @@ $$\mathbf{h} = [185, 75, 30]$$
 - **Associativity**: For any scalars $c$, $d$ and vector $\mathbf{v}$: $(cd)\mathbf{v} = c(d\mathbf{v})$
 
 - **Identity Element**: For any vector $\mathbf{v}$: $1\mathbf{v} = \mathbf{v}$, where $1$ is the multiplicative identity in the field of scalars.
+
+- A **subspace** is just a smaller playground inside the bigger one. Imagine 3D space as a room. A flat sheet of paper passing through the centre of the room is a subspace, and so is a single straight wire through the centre.
+
+- The key requirement is that the subspace must pass through the origin. If you shift that sheet of paper off-centre, it stops being a subspace because the zero vector is no longer on it.
+
+![Subspaces: a line and a plane through the origin inside 3D space](../images/subspaces.svg)
+
+- All the same rules from the vector space (addition, scaling, closure) still work inside a subspace. You can add or scale vectors within it and never "fall off" into the larger space.
+
+- A line through the origin is a 1-dimensional subspace, a plane through the origin is a 2-dimensional subspace, and the full space is a subspace of itself.
+
+- In ML, subspaces appear naturally. High-dimensional data often has structure that lives on a lower-dimensional subspace. Techniques like PCA find that subspace so we can work with the data more efficiently.
+
+## Coding Tasks (use CoLab or notebook)
+
+1. Run code to verify the distributivity property, then Modify and play around to test other rules!
+```python
+import jax.numpy as jnp
+
+u = jnp.array([1, 2])
+v = jnp.array([3, 0])
+c = 2
+
+lhs = c * (u + v)
+rhs = c*u + c*v
+
+print(f"LHS: {lhs}")
+print(f"RHS: {rhs}")
+```
+
+2. Run code to visualise different vectors, then modify values for different coordinates to understand how each axis affects position.
+```python
+import jax.numpy as jnp
+import matplotlib.pyplot as plt
+
+# Try changing these vectors!
+a = jnp.array([3, 2, 4])
+b = jnp.array([1, 4, 2])
+c = jnp.array([4, 1, 3])
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection="3d")
+
+for vec, name, color in [(a, "a", "red"), (b, "b", "blue"), (c, "c", "green")]:
+    ax.quiver(0, 0, 0, *vec, color=color, arrow_length_ratio=0.1, linewidth=2, label=name)
+
+lim = int(jnp.abs(jnp.stack([a, b, c])).max()) + 1
+ax.set_xlim([0, lim]); ax.set_ylim([0, lim]); ax.set_zlim([0, lim])
+ax.set_xlabel("X"); ax.set_ylabel("Y"); ax.set_zlabel("Z")
+ax.legend()
+plt.show()
+```
