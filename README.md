@@ -24,9 +24,10 @@ Over the past 7 years working in AI/ML, I filled notebooks with intuition first,
 | 12 | Computing & OS | discreet maths, computer architecture, operating systems, RAM, concurrency, parallelism, programming languages | Coming |
 | 13 | Data Structures & Algorithms | arrays, trees, graph, search, sorting, hashmaps | Coming |
 | 14 | SIMD & GPU Programming | ARM & NEON, X86 chips, RISC ships, GPUs, TPUs, triton, CUDA, Vulkan | Coming |
-| 15 | Inference | quantisation, streamingLLMs, continuous batching, edge inference, | Coming |
-| 16 | Intersecting Fields | quantum ML, neuromorphic ML, AI for finace, AI for bio | Coming |
-| 17 | Henry's Research Findings | I run many hyperfocused experiemts and will share findings | Coming |
+| 15 | Systems Design | systems design fundamentals, cloud computing, large scale infra, ML systems design examples | Coming |
+| 16 | Inference | quantisation, streamingLLMs, continuous batching, edge inference, | Coming |
+| 17 | Intersecting Fields | quantum ML, neuromorphic ML, AI for finace, AI for bio | Coming |
+| 18 | Research Blog | share small-scale experimental finding, 1 per md file with your name & affiliation, I have a lot | Coming |
 
 ## Citation
 ```bibtex
@@ -43,3 +44,10 @@ Over the past 7 years working in AI/ML, I filled notebooks with intuition first,
 - Star & watch to get content as they drop.
 - Suggest topics via GitHub issues.
 - PR corrections and better intuition.
+
+**Contributor guide**: 
+- Create SVG images in `../images/` for all diagrams. 
+- For equations, use ` ```math ` fenced code blocks (NOT `$$`)
+- For display math — GitHub escapes `\\` inside `$$`, breaking matrices. 
+- Inline math `$...$` is fine for simple expressions but move anything with `\\` into a ` ```math ` block. 
+- Use `\ast` instead of `*` for conjugate/adjoint in inline math.
