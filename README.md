@@ -44,8 +44,6 @@ Over the past 7 years working in AI/ML, I filled notebooks with intuition first,
 - Star & watch to get content as they drop.
 - Suggest topics via GitHub issues.
 - PR corrections and better intuition.
-
-**Contributor guide**: 
 - Create SVG images in `../images/` for all diagrams. 
 - For equations, use ` ```math ` fenced code blocks (NOT `$$`)
 - For display math — GitHub escapes `\\` inside `$$`, breaking matrices. 
